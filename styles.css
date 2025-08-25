@@ -1,0 +1,197 @@
+/* Set background color variables */
+:root{
+  --background: 250 250% 99%;
+  --secondary: 222 15% 15%;
+}
+html{
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Raleway', serif;
+  color: linen;
+  margin: 0;
+}
+head{
+  position: fixed;
+  top: 0;
+}
+/* Set background with transparent text for gradient text effect */
+h1{
+  background: linear-gradient(135deg, hsl(240 100% 60%) 0%, hsl(270 60% 65%) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+}
+p{
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}
+#navbar{
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  top:0;
+  width: 100%;
+  background-color: hsl(var(--secondary));
+  left: 0;
+  box-shadow: 0 2px 0 rgba(0, 0, 0);
+}
+#navbar a:hover {
+  background-color: rgb(9, 9, 9);
+}
+.menu-item{
+  text-decoration: none;
+  color: rgb(113, 113, 255);
+  padding: 1rem;
+  font-size: 1rem;
+}
+section{
+  display: block;
+}
+#welcome-section{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+}
+#welcome-section p{
+  font-style: italic;
+  color: #be3144;
+}
+#about{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 1), #435567);
+}
+#about p{
+  width: 40%;
+  text-align: center;
+  padding: 0.9rem;
+  font-style: italic;
+}
+#certification{
+  font-size:12px;
+  text-decoration: none;
+  color: rgb(0, 0, 110);
+  color: rgb(126, 110, 179);
+  background-color: #000000;
+  border: #000000 solid 2px;
+  padding: 0.4rem;
+  border-radius: 10px;
+}
+#certification{
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+/* Reinforce clickability with hover style */
+#certification:hover {
+  opacity: 1.7;
+  filter: brightness(1.7);
+  border: rgb(49, 44, 70) 2px solid;
+}
+/* Set up project grid layout to adjust to screen size */
+.project-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 250px));
+  width: 100%;
+  max-width: 1280px;
+  gap: 0.5rem;
+  margin: 0px auto 0;
+  padding-top: 1rem;
+  justify-items: center;
+  justify-content: center;
+}
+#projects h1{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3.5rem;
+}
+#projects{
+  background: linear-gradient(#435567, #000000);
+  height: 50vh;
+  text-align: center;
+}
+.contact-icon{
+  color: linen;
+  text-decoration: none;
+}
+figure{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+figcaption{
+  width: 100%;
+  text-align: center;
+}
+.project-tile{
+  width: 100%;
+  display: block;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+#contact{
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+}
+.contact-icon{
+  font-size: 1.2rem;
+}
+figure > a img {
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+figure > a:hover img {
+  opacity: 0.7;
+  filter: brightness(1.2);
+}
+img{
+  border-radius: 5%;
+}
+footer{
+  width: 100%;
+  text-align: right;
+  font-size:0.7rem;
+  background: #000000;
+  color:#8b8b8b
+}
+/* Responsive design adjustments for phone screens */
+/* add background to github link for greater visibility on mobile */
+@media (max-width: 780px) {
+  #welcome-section,
+  #about,
+  #projects {
+    height: auto;
+    min-height: 100vh;
+  }
+#welcome-section{
+    padding-top: 2rem;
+  }
+#contact{
+  min-height: 20vh;;
+}
+.project-grid {
+  grid-template-columns: auto-fit;
+}
+#github{
+  background-color: #23313f;
+  border-radius: 5%;
+}
+}
