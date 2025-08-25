@@ -36,8 +36,10 @@ const appTimer = () => {
   const minutesLeft = parseInt(minuteDisplay.textContent, 10);
   const secondsLeft = parseInt(secondDisplay.textContent, 10);
 
-  // total seconds now includes both
+  // total seconds calculated for countdown
   let totalSeconds = minutesLeft * 60 + secondsLeft;
+
+  // Avoid bug where timer counts to negative numbers if started at 0:00
   if( totalSeconds === 0 ) {
     alert('Please set a time greater than 0.');
     return;
@@ -68,6 +70,7 @@ const appTimer = () => {
   }
   startBtn.addEventListener('click', appTimer);
 
+  //set values to 25 for quick access to pomodoro technique presets
   const set25 = () => {
     document.getElementById('mins').value = 25;
     document.getElementById('secs').value = 0;
@@ -75,6 +78,7 @@ const appTimer = () => {
   }
   preset25.addEventListener('click', set25);
 
+  //set values to 5 for quick access to pomodoro technique presets
   const set5 = () => {
     document.getElementById('mins').value = 5;
     document.getElementById('secs').value = 0;
