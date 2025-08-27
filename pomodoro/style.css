@@ -96,26 +96,6 @@ button {
   color: #d8e9ef;
 }
 
-button:hover {
-  color: #90c0d1;
-}
-
-.btn-start{
-  position: relative;
-  top: 50px;
-  border-radius: 5px;
-  background-color: linen;
-  background-color: rgba(191, 232, 212, 0.492);
-  color: rgb(9, 47, 34);
-}
-
-/*add hover effect for start button*/
-.btn-start:hover{
-  background-color: #90c0d1;
-  border: #0e4a4d 2px solid;
-  color: #0e4a4d;
-}
-
 .minSelector, .secSelector, .btn-re{
   display: flex;
   justify-content: center;
@@ -142,10 +122,178 @@ button:hover {
   width: 50px;
 }
 
-.btn-re{
+.btn-reset{
   position: relative;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: linen;
+  background-color: rgba(191, 232, 212, 0.492);
+  color: rgb(9, 47, 34);
+}
+
+/*add hover effect for reset button*/
+.btn-reset:hover{
+  background-color: #34c174;
+  box-sizing: border-box;
+  outline: #0e4a4d 2px solid;
+  color: #064337;
+  transition: all .1s ease-in-out;
+}
+/*Scale on click for "push" effect*/
+.btn-reset:active{
+  transform: scale(0.975);
 }
 
 .presets {
   padding-bottom: 10px;
+}
+.preset25:hover {
+  color: #90c0d1;
+}
+/*Scale on click for "push" effect*/
+.preset25:active {
+  transform: scale(0.975);
+  color: #34c174;
+}
+.preset5:hover {
+  color: #90c0d1;
+}
+/*Scale on click for "push" effect*/
+.preset5:active {
+  transform: scale(0.975);
+  color: #34c174;
+}
+
+/*Start Button style from uiverse.io by FColombati */
+.btn-start {
+  all: unset;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  position: relative;
+  top: 50px;
+  scale: 0.6;
+  width: 120px;
+  border-radius: 100em;
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow:
+    -0.15em -0.15em 0.15em -0.075em rgba(5, 5, 5, 0.25),
+    0.0375em 0.0375em 0.0675em 0 rgba(5, 5, 5, 0.1);
+}
+
+.btn-start::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: calc(100% + 0.3em);
+  height: calc(100% + 0.3em);
+  top: -0.15em;
+  left: -0.15em;
+  border-radius: inherit;
+  background: linear-gradient(
+    -135deg,
+    rgba(5, 5, 5, 0.5),
+    transparent 20%,
+    transparent 100%
+  );
+  filter: blur(0.0125em);
+  opacity: 0.25;
+  mix-blend-mode: multiply;
+}
+
+/*use outer and inner for shadow effects*/
+.btn-start .button-outer {
+  position: relative;
+  z-index: 1;
+  border-radius: inherit;
+  transition: box-shadow 300ms ease;
+  will-change: box-shadow;
+  box-shadow:
+    0 0.05em 0.05em -0.01em rgba(5, 5, 5, 1),
+    0 0.01em 0.01em -0.01em rgba(5, 5, 5, 0.5),
+    0.15em 0.3em 0.1em -0.01em rgba(5, 5, 5, 0.25);
+}
+
+.btn-start:hover .button-outer {
+  box-shadow:
+    0 0 0 0 rgba(5, 5, 5, 1),
+    0 0 0 0 rgba(5, 5, 5, 0.5),
+    0 0 0 0 rgba(5, 5, 5, 0.25);
+}
+
+.button-inner {
+  --inset: 0.035em;
+  position: relative;
+  z-index: 1;
+  border-radius: inherit;
+  padding: 1em 1.5em;
+  background-image: linear-gradient(
+    135deg,
+    rgba(230, 230, 230, 1),
+    rgba(180, 180, 180, 1)
+  );
+  transition:
+    box-shadow 300ms ease,
+    clip-path 250ms ease,
+    background-image 250ms ease,
+    transform 250ms ease;
+  will-change: box-shadow, clip-path, background-image, transform;
+  overflow: clip;
+  clip-path: inset(0 0 0 0 round 100em);
+  box-shadow:
+        /* 1 */
+    0 0 0 0 inset rgba(5, 5, 5, 0.1),
+    /* 2 */ -0.05em -0.05em 0.05em 0 inset rgba(5, 5, 5, 0.25),
+    /* 3 */ 0 0 0 0 inset rgba(5, 5, 5, 0.1),
+    /* 4 */ 0 0 0.05em 0.2em inset rgba(255, 255, 255, 0.25),
+    /* 5 */ 0.025em 0.05em 0.1em 0 inset rgba(255, 255, 255, 1),
+    /* 6 */ 0.12em 0.12em 0.12em inset rgba(255, 255, 255, 0.25),
+    /* 7 */ -0.075em -0.25em 0.25em 0.1em inset rgba(5, 5, 5, 0.25);
+}
+
+.btn-start:hover .button-inner {
+  clip-path: inset(
+    clamp(1px, 0.0625em, 2px) clamp(1px, 0.0625em, 2px)
+      clamp(1px, 0.0625em, 2px) clamp(1px, 0.0625em, 2px) round 100em
+  );
+  box-shadow:
+        /* 1 */
+    0.1em 0.15em 0.05em 0 inset rgba(5, 5, 5, 0.75),
+    /* 2 */ -0.025em -0.03em 0.05em 0.025em inset rgba(5, 5, 5, 0.5),
+    /* 3 */ 0.25em 0.25em 0.2em 0 inset rgba(5, 5, 5, 0.5),
+    /* 4 */ 0 0 0.05em 0.5em inset rgba(255, 255, 255, 0.15),
+    /* 5 */ 0 0 0 0 inset rgba(255, 255, 255, 1),
+    /* 6 */ 0.12em 0.12em 0.12em inset rgba(255, 255, 255, 0.25),
+    /* 7 */ -0.075em -0.12em 0.2em 0.1em inset rgba(5, 5, 5, 0.25);
+}
+
+.btn-start .button-inner span {
+  position: relative;
+  z-index: 4;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0);
+  background-image: linear-gradient(
+    135deg,
+    rgba(25, 25, 25, 1),
+    rgba(75, 75, 75, 1)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: transform 250ms ease;
+  display: block;
+  will-change: transform;
+  text-shadow: rgba(0, 0, 0, 0.1) 0 0 0.1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/*Leave button outer unscaled for added push effect*/
+.btn-start:hover .button-inner span {
+  transform: scale(0.975);
+}
+
+/*Scale additionally on click*/
+.btn-start:active .button-inner {
+  transform: scale(0.925);
 }
